@@ -39,8 +39,24 @@ void mouseClicked() {
 }
 
 void keyPressed() {
-  if ( !mets.isEmpty() ) {
-    mets.remove(0);
+  if ( key == 'd' ){
+    if ( !mets.isEmpty() ) {
+      mets.remove(0);
+    }
+  } else if ( key == 'f' ) {
+    for ( Meteor met : mets) {
+      if ( !met.followMouse ){
+        met.followMouse = true;
+        break;
+      }
+    }
+  } else if ( key == 's' ) {
+    for ( Meteor met : mets) {
+      if ( met.followMouse ){
+        met.followMouse = false;
+        break;
+      }
+    }
   }
 }
 
